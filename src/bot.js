@@ -31,8 +31,8 @@ bot.onText(/\/havadurumu (.+)/ , (msg,match)=>{
                         error
                     });
                 }else{
-                    bot.sendMessage(chatId, `TR: Mekan: ${text}\nEN: Location: ${text}`);
-                    bot.sendMessage(chatId, `${response}`);
+                    bot.sendMessage(chatId, `TR: Mekan: ${text}\nEN: Location: ${text}\n\n${response}`);
+                    
                     
                 }
                
