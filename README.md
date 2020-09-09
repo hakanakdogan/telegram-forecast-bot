@@ -9,4 +9,5 @@ Bot Link: t.me/foreCasttT_bot
 
 
 
-![telegram-bot](https://user-images.githubusercontent.com/54938929/92597093-87d05f00-f2af-11ea-815e-0a7626d5dac7.png)
+![Ek Açıklama 2020-09-09 214859](https://user-images.githubusercontent.com/54938929/92640670-4effac80-f2e6-11ea-94b8-6071a665ddd3.png)
+
