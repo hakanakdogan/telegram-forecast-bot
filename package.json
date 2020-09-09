@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node src/bot.js",
-    "dev":"nodemon src/bot.js"
+    "start": "node src/bot.js",
+    "dev": "nodemon src/bot.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "node-telegram-bot-api": "^0.50.0",
     "nodemon": "^2.0.4",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "xml2js": "^0.4.23"
   }
 }
