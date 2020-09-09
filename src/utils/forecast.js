@@ -16,22 +16,7 @@ const forecast = (lat , long ,callback)=>{
             callback({errType:body.error.type,errInfo:response.body.error.info} , undefined)
         }else{
             
-            translate(currentWeather.weather_descriptions[0],(error,response)=>{
-                if(error){
-                    return console.log(error);
-                }
-                parseString(response, (err,result)=>{
-                    ceviri =result.string._;
-                });
-
-                callback(undefined ,  `TR: Hava gün boyunca ${ceviri} olacak.\nHava şu an ${currentWeather.temperature} derece.\nHissedilen sıcaklık ${currentWeather.feelslike}\nNem ise şu an %${currentWeather.humidity} \n\nEN: It is ${currentWeather.weather_descriptions[0]} throughout the day.\nIt is currently ${currentWeather.temperature} degrees out.\nIt feels like ${currentWeather.feelslike} degrees out.\nHumidity is %${currentWeather.humidity} right now.`);
-                
-            
-            });
-
-
-
-            
+        callback(undefined ,  `TR:Hava şu an ${currentWeather.temperature} derece.\nHissedilen sıcaklık ${currentWeather.feelslike}\nNem ise şu an %${currentWeather.humidity} \n\nEN: It is ${currentWeather.weather_descriptions[0]} throughout the day.\nIt is currently ${currentWeather.temperature} degrees out.\nIt feels like ${currentWeather.feelslike} degrees out.\nHumidity is %${currentWeather.humidity} right now.`);
         }
 
     });
