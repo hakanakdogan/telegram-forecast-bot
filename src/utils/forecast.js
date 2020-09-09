@@ -15,7 +15,12 @@ const forecast = (lat , long ,callback)=>{
             callback({errType:body.error.type,errInfo:response.body.error.info} , undefined)
         }else{
             
-        callback(undefined ,`TR: Hava şu an ${currentWeather.temperature} derece.\nHissedilen sıcaklık ${currentWeather.feelslike} derece.\nNem ise şu an %${currentWeather.humidity} \n\nEN: It is ${currentWeather.weather_descriptions[0]} throughout the day.\nIt is currently ${currentWeather.temperature} degrees out.\nIt feels like ${currentWeather.feelslike} degrees out.\nHumidity is %${currentWeather.humidity} right now.`);
+        // callback(undefined ,`TR: Hava şu an ${currentWeather.temperature} derece.\nHissedilen sıcaklık ${currentWeather.feelslike} derece.\nNem ise şu an %${currentWeather.humidity} \n\nEN: It is ${currentWeather.weather_descriptions[0]} throughout the day.\nIt is currently ${currentWeather.temperature} degrees out.\nIt feels like ${currentWeather.feelslike} degrees out.\nHumidity is %${currentWeather.humidity} right now.`);
+        callback(undefined ,{
+            weather:currentWeather.weather_descriptions[0],
+            temperature:currentWeather.temperature,
+            feelslike: currentWeather.feelslike ,
+            humidity:currentWeather.humidity} );
         }
 
     });

@@ -1,8 +1,8 @@
 const TelegramBot = require("node-telegram-bot-api");
 const forecast = require("./utils/forecast");
 const geocode = require("./utils/geocode");
-
-
+const translate = require("./utils/translate");
+const parseString = require("xml2js").parseString;
 
 const token = "1374540809:AAHN11RT4z8cG5HyBLeoAuSf3M2vRWNLpIQ";
 
@@ -31,7 +31,22 @@ bot.onText(/\/havadurumu (.+)/ , (msg,match)=>{
                         error
                     });
                 }else{
-                    bot.sendMessage(chatId, `TR: Mekan: ${text}\nEN: Location: ${text}\n\n${response}`);
+                    translate(response.weather,(error,response)=>{
+                        if(error){
+                            return console.log(error);
+                        }else{
+                            parseString(response, (err,result)=>{
+                                
+                                bot.sendMessage(chatId, `TR: Mekan: ${text}\nEN: Location: ${text}\n\n${result.string._}`);
+                            })
+                            
+                        }
+                        
+                        
+                    
+                    })
+                    
+                    
                     
                     
                 }
