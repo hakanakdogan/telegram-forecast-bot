@@ -3,6 +3,7 @@
 telegram-forecast-bot built with Node.js. This bot uses weatherstack api and mapbox api for getting the forecast data and geocode data.
 You can start talking with the bot by clicking the link below.
 
+
 Bot Link: t.me/foreCasttT_bot
 
 
