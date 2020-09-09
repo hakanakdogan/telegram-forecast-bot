@@ -10,15 +10,15 @@ const bot = new TelegramBot(token, {polling:true});
 
 
 
-bot.onText(/\/help/, (msg) => {
+bot.onText(/\/yardim/, (msg) => {
    const chatId = msg.chat.id;
    
 
-    bot.sendMessage(chatId , 'You can get your weather by using the "/forecast"command.\nFor example "/forecast New York".');
+    bot.sendMessage(chatId , 'TR: Hava durumunuzu "/havadurumu" kodunu kullanarak görüntüleyebilirsiniz.\nOrnegin:"/havadurumu New York"\nEN: You can get your weather by using the "/havadurumu"command.\nFor example "/havadurumu New York".');
 });
 
 
-bot.onText(/\/forecast (.+)/ , (msg,match)=>{
+bot.onText(/\/havadurumu (.+)/ , (msg,match)=>{
     const chatId = msg.chat.id;
     const response = match[1];
     geocode(response , (error ,{latitude, longitude, text}={})=>{
@@ -27,7 +27,7 @@ bot.onText(/\/forecast (.+)/ , (msg,match)=>{
         }else{
             forecast(latitude, longitude, (error,response)=>{
                 if(error !== undefined){
-                    return res.send({
+                    return bot.sendMessage(chatId,{
                         error
                     });
                 }else{
