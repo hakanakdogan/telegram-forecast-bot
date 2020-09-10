@@ -8,6 +8,10 @@ const token = "1374540809:AAHN11RT4z8cG5HyBLeoAuSf3M2vRWNLpIQ";
 
 const bot = new TelegramBot(token, {polling:true});
 
+bot.onText(/\/start/ , (msg)=>{
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId , 'TR: Hava durumunuzu "/havadurumu" kodunu kullanarak görüntüleyebilirsiniz.\nOrnegin:"/havadurumu New York"\n\nEN: You can get your weather by using the "/havadurumu"command.\nFor example "/havadurumu New York".');
+});
 
 
 bot.onText(/\/yardim/, (msg) => {
